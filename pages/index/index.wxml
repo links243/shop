@@ -1,0 +1,38 @@
+<!-- 搜索栏开始 -->
+<search />
+<!-- 搜索栏结束 -->
+<!-- 轮播图开始 -->
+<view class="swiper_view">
+  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true">
+    <block wx:for="{{swiperImgUrl}}" wx:key="id">
+      <swiper-item>
+        <image mode="widthFix" src='{{item.image_src}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 轮播图结束 -->
+<!-- 导购开始 -->
+<view class="navigation">
+  <view class="category">
+    <view class="categoryItem" wx:for="{{catitemsData}}" wx:key="name">
+      <image src="{{item.image_src}}"></image>
+    </view>
+  </view>
+  <!-- 楼层开始 -->
+  <view class="floor" wx:for="{{floorData}}" wx:key="*this">
+    <view class="floor_title">
+      <image class="floor_title_img" mode="aspectFit" src="{{item.floor_title.image_src}}"></image>
+    </view>
+    <view class="floor_content clearfix">
+      <block wx:for="{{item.product_list}}" wx:key="*this">
+        <image class="floor_content_img" mode="scaleToFill" src="{{item.image_src}}"></image>
+      </block>
+    </view>
+  </view>
+  <!-- 楼层结束 -->
+</view>
+<!-- 导购结束 -->
+<!-- 回到顶部开始 -->
+<view class="toTop" bindtap="goToTop">↑</view>
+<!-- 回到顶部结束 -->
