@@ -1,2 +1,37 @@
-<!--pages/goodDetail/goodDetail.wxml-->
-<text>pages/goodDetail/goodDetail.wxml</text>
+<!-- pages/goods_detail/goods_detail.wxml -->
+<view class="banner">
+  <swiper class="swiper" indicator-dots circular indicator-color="rgba(255, 255, 255, .3)" autoplay indicator-active-color='#fff'>
+    <block wx:for="{{goodsDate.pics}}" wx:key="pics_id">
+      <swiper-item bindtap='previewImage' data-src='{{item.pics_big_url}}'>
+        <image mode="aspectFill" src="{{item.pics_mid_url}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="price">{{goodsDate.goods_price}}</view>
+<view class="box">
+  <view class="title">{{goodsDate.goods_name}}</view>
+  <view class="collect">
+    <image src="/images/star.svg"></image>
+    收藏
+  </view>
+</view>
+<view class="free">快递： 免运费</view>
+<view class="info">图文详情</view>
+<rich-text nodes="{{goodsDate.goods_introduce}}" bindtap="tap"></rich-text>
+<view class="tab_bottom">
+  <view class="tab_bottom_l">
+    <view class="kefu">
+      <image src="../../images/kefu.svg" />
+      <text>联系客服</text>
+    </view>
+    <view class="cart">
+      <image src="../../images/gouwuche.svg" />
+      <text>购物车</text>
+    </view>
+  </view>
+  <view class="tab_bottom_r">
+    <view class="intoCart">加入购物车</view>
+    <view class="buyNow">立即购买</view>
+  </view>
+</view>

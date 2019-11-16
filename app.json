@@ -1,12 +1,12 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/goodList/goodList",
     "pages/category/category",
     "pages/cart/cart",
     "pages/my/my",
     "pages/orders/orders",
     "pages/search/search",
-    "pages/goodList/goodList",
     "pages/goodDetail/goodDetail",
     "pages/logs/logs"
   ],
@@ -45,8 +45,8 @@
     ]
   },
   "networkTimeout": {
-    "request": 10000,
-    "downloadFile": 10000
+    "request": 15000,
+    "downloadFile": 15000
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

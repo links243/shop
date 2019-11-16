@@ -1,3 +1,33 @@
 <!-- 搜索栏开始 -->
 <search />
 <!-- 搜索栏结束 -->
+<!-- 分类列表开始 -->
+<view class="category_content">
+  <scroll-view class="category_left" scroll-y>
+    <block wx:for="{{ category }}" wx:key="*this">
+      <view data-index="{{index}}" class="category_left_item {{index === activeIndex ? 'active' : ''}}" bindtap="getActive">
+        {{ item.cat_name }}
+      </view>
+    </block>
+  </scroll-view>
+  <!-- 右 -->
+
+  <scroll-view class="category_right" scroll-y scroll-top="{{rightTop}}">
+    <block wx:for="{{rightDate}}" wx:key="*this">
+      <view class="category_right_title">
+        <text>{{item.cat_name}}</text>
+      </view>
+      <view class="category_right_content">
+        <block wx:for="{{ item.children }}" wx:key="cat_id" wx:for-item="item2">
+          <navigator url="/pages/goodList/goodList?cid={{item2.cat_id}}&query={{item2.cat_name}}">
+            <view class="category_right_content_item">
+              <image src="{{item2.cat_icon}}"></image>
+              <text>{{item.cat_name}}</text>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<!-- 分类列表结束 -->

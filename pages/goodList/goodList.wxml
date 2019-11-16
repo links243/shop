@@ -1,2 +1,31 @@
-<!--pages/goodList/goodList.wxml-->
-<text>pages/goodList/goodList.wxml</text>
+<!-- 搜索栏开始 -->
+<search />
+<!-- 搜索栏结束 -->
+<!-- 筛选栏开始 -->
+<view class="tabs">
+  <view class="tabs_item active">综合</view>
+  <view class="tabs_item">销量</view>
+  <view class="tabs_item">价格</view>
+</view>
+<!-- 筛选栏结束 -->
+<!-- 列表开始 -->
+<view class="goodsList">
+  <block wx:for="{{goods}}" wx:key="{{goods_id}}">
+    <navigator url="/pages/goodDetail/goodDetail?goods_id={{item.goods_id}}">
+    <view class="goodsList_item">
+      <view class="img">
+        <image src="{{item.goods_small_logo || '/images/default.svg' }}"></image>
+      </view>
+      <view class="info">
+        <view class="info_top">
+          <text>{{item.goods_name}}</text>
+        </view>
+        <view class="info_bottom">
+          <text>￥{{item.goods_price}}</text>
+        </view>
+      </view>
+    </view>
+    </navigator>
+  </block>
+</view>
+<!-- 列表结束 -->
