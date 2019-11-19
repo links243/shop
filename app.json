@@ -4,6 +4,7 @@
     "pages/goodList/goodList",
     "pages/category/category",
     "pages/cart/cart",
+    "pages/pay/pay",
     "pages/my/my",
     "pages/orders/orders",
     "pages/search/search",

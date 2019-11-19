@@ -49,6 +49,48 @@ Page({
       urls: this.data.previewImageUrl // 需要预览的图片http链接列表
     });
   },
+  // 加入购物车
+  addToCart() {
+    // 先获取本地存储的购物车信息
+    const storage = wx.getStorageSync('goodBuy13') || [];
+    // 取出当前的商品信息
+    const{
+      goods_id,
+      goods_price,
+      goods_name,
+      goods_small_logo,
+    } = this.data.goodsDate;
+    // 查询本地存储的购物车信息是否存在当前商品
+    const flag = storage.findIndex( v => {
+      return v.goods_id === goods_id
+    });
+    // 如果本地存储的购物车信息没有当前商品 则加入并存入本地
+    // 如果有 商品数量加一
+    if(flag === -1){
+      storage.push({
+        goods_id,
+        goods_price,
+        goods_name,
+        goods_small_logo,
+        // 商品的选择信息
+        good_status: true,
+        // 商品数量 初始化为1
+        good_num: 1
+      });
+    } else {
+      storage[flag].good_num += 1;
+    }
+    // 数据存入本地
+    wx.setStorageSync('goodBuy13', storage);
+    console.log(storage);
+
+    wx.showToast({
+      title: '加入成功',
+      icon: 'success',
+      mask: true,
+      duration: 1000
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

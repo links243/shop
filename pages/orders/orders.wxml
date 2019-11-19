@@ -1,2 +1,32 @@
-<!--pages/orders/orders.wxml-->
-<text>pages/orders/orders.wxml</text>
+<view class="tabs">
+  <view class="tabs-title">
+    <block wx:for="{{ tabs }}" wx:key="type">
+      <view bindtap="changeTabs" data-type="{{ item.type }}" class="tabs-item {{ activeType === item.type ? 'active' : '' }}">
+        {{ item.text }}
+      </view>
+    </block>
+  </view>
+  <view class="tab-content">
+    <block wx:for="{{ orders }}" wx:key="order_id">
+      <view class="order-item">
+        <view class="order-item-row">
+          <text>订单编号</text>
+          <text>{{ item.order_number }}</text>
+        </view>
+        <view class="order-item-row">
+          <text>订单价格</text>
+          <text class="order-item-price">{{ item.order_price }}</text>
+        </view>
+        <view class="order-item-row">
+          <text>订单日期</text>
+          <text>{{ item.format_time }}</text>
+        </view>
+        <view class="order-item-row">
+          <text>订单状态</text>
+          <button wx:if="{{ item.pay_status === '0' }}" size="mini" type="warn">去支付</button>
+          <button wx:if="{{ item.pay_status === '1' }}" size="mini" type="primary">看物流</button>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

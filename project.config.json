@@ -14,7 +14,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.2",
-	"appid": "wxf131c58c5c08b8d0",
+	"appid": "wxfb52f2d7b2f6123a",
 	"projectname": "myFristProject",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -48,9 +48,9 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/goodDetail/goodDetail",
-					"pathName": "pages/goodDetail/goodDetail",
-					"query": "goods_id=53947",
+					"name": "pages/cart/cart",
+					"pathName": "pages/cart/cart",
+					"query": "",
 					"scene": null
 				}
 			]

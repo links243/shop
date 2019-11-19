@@ -18,20 +18,29 @@
 </view>
 <view class="free">快递： 免运费</view>
 <view class="info">图文详情</view>
-<rich-text nodes="{{goodsDate.goods_introduce}}" bindtap="tap"></rich-text>
+<rich-text class="goods_content" nodes="{{goodsDate.goods_introduce}}" bindtap="tap"></rich-text>
+<!-- 底部工具栏 -->
 <view class="tab_bottom">
   <view class="tab_bottom_l">
     <view class="kefu">
+      <button class="kefu_btn" open-type="contact"></button>
       <image src="../../images/kefu.svg" />
       <text>联系客服</text>
     </view>
+    <view class="share">
+      <button class="share_btn" open-type="share"></button>
+      <image src="../../images/gouwuche.svg" />
+      <text>分享</text>
+    </view>
+    <navigator url="/pages/cart/cart" open-type="switchTab">
     <view class="cart">
       <image src="../../images/gouwuche.svg" />
       <text>购物车</text>
     </view>
+    </navigator>
   </view>
   <view class="tab_bottom_r">
-    <view class="intoCart">加入购物车</view>
+    <view class="intoCart" bindtap="addToCart">加入购物车</view>
     <view class="buyNow">立即购买</view>
   </view>
 </view>

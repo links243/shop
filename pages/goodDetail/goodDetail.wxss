@@ -80,6 +80,9 @@ image {
   font-size: 26rpx;
   background-color: #fff;
 }
+.goods_content {
+  font-size: 0;
+}
 .tab_bottom {
   height: 100rpx;
   width: 750rpx;
@@ -94,10 +97,28 @@ image {
   background-color: #fff;
   color: #999;
 }
-.tab_bottom_l>.kefu, .tab_bottom_l>.cart {
+.tab_bottom_l>.kefu>.kefu_btn, .tab_bottom_l>.share>.share_btn {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  background: rgba(0, 0, 0, .2);
+  left: 0rpx;
+  top: 0rpx;
+}
+.tab_bottom_l>.share>.share_btn {
+  width: 80rpx;
+}
+.tab_bottom_l>.kefu {
+  position: relative;
+}
+.tab_bottom_l>.share {
+  position: relative;
+}
+.tab_bottom_l>.kefu, .tab_bottom_l>navigator>.cart, .tab_bottom_l>.share {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 24rpx;
 }
 .tab_bottom_r {
   display: flex;
@@ -117,4 +138,5 @@ image {
 }
 page {
   background-color: #eee;
+  padding-bottom: 100rpx;
 }

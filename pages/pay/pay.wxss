@@ -2,13 +2,26 @@
 page {
   background-color: #f4f4f4;
 }
+.address {
+  height: 200rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+.address-info {
+  display: flex;
+  flex-direction: column;
+}
+.address-info > text {
+  margin: 10rpx 0;
+}
 
 .cart {
   background-color: #fff;
 }
-.cart-list {
-  padding-bottom: 98rpx;
-}
+
 .cart-item {
   display: flex;
 }
@@ -114,4 +127,42 @@ page {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* empty-cart */
+
+.empty-cart {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.empty-cart-image {
+  width: 400rpx;
+  height: 400rpx;
+}
+.empty-cart-btn {
+  border: 1rpx solid #ddd;
+  padding: 30rpx;
+  border-radius: 100rpx;
+}
+
+.bar-btn {
+  position: relative;
+}
+.bar-btn .token-btn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: pink;
+  /* 大家记得设置为 0 */
+  opacity: 1;
 }

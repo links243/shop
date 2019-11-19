@@ -1,1 +1,48 @@
-/* pages/orders/orders.wxss */
+/* pages/order/order.wxss */
+.tabs-title {
+  height: 80rpx;
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+}
+.tabs-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+}
+.tabs .active {
+  color: red;
+  position: relative;
+}
+.tabs .active::after {
+  content: "";
+  width: 100%;
+  height: 2rpx;
+  background-color: red;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+.order-item {
+  border-bottom: 1rpx solid #ddd;
+  padding: 20rpx;
+}
+.order-item-row {
+  display: flex;
+  justify-content: space-between;
+}
+.order-item-row text:first-child {
+  color: #666;
+}
+.order-item-row button {
+  margin: 0;
+}
+.order-item-price {
+  color: red;
+  font-size: 30rpx;
+}
+.order-item-price::before {
+  content: "￥";
+  font-size: 80%;
+}
